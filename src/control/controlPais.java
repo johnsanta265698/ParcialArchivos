@@ -108,4 +108,27 @@ public class controlPais {
         objArchivos2.renombrarUnArchivo("Paises.tmp","Paises.txt");
         objArchivos2.borrarUnArchivo("Paises.tmp");
     }
+    
+    public Pais consultar(){
+        String codigo = objPais.getCodigo();
+        Archivos objArchivos = new Archivos();
+        objArchivos.abrirArchivoParaLectura("Paises.txt");
+        long nLineas = objArchivos.contarLineas();
+        objArchivos.cerrarArchivoParaLectura();
+        objArchivos.abrirArchivoParaLectura("Paises.txt");
+        
+        int i = 1;
+        while (i<=nLineas) {
+            String linea = objArchivos.leerUnaLineaTexto();
+            String[] arrLinea = linea.split(",");
+            if (codigo.equals(arrLinea[0])) {
+                objPais.setNombre(arrLinea[1]);
+                i = (int)nLineas+1;
+            }
+            i+=1;
+        }
+        objArchivos.cerrarArchivoParaLectura();
+        return objPais;
+    }
+    
 }
