@@ -138,13 +138,13 @@ public class controlPais {
         Archivos objArchivos= new Archivos();
         objArchivos.abrirArchivoParaLectura("Paises.txt");
         long n=objArchivos.contarLineas();
-        mat = new String[(int)n][4];
+        mat = new String[(int)n][2];
         objArchivos.cerrarArchivoParaLectura();
         objArchivos.abrirArchivoParaLectura("Paises.txt");
         for (long i=0;i<n;i++){
             linea=objArchivos.leerUnaLineaTexto();
             arrLinea=linea.split(",");
-            for(int j=0;j<4;j++) mat[(int)i][j]=arrLinea[j];
+            for(int j=0;j<2;j++) mat[(int)i][j]=arrLinea[j];
        }
        objArchivos.cerrarArchivoParaLectura();
        return mat;

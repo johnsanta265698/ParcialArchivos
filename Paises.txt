@@ -1,2 +1,2 @@
-4,Tokio
 8,Berlin
+4,Tokio

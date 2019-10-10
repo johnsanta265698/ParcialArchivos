@@ -78,6 +78,11 @@ public class vistaPais extends javax.swing.JFrame {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         tblListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -201,13 +206,24 @@ public class vistaPais extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String cod = txfCodigo.getText();
-        Pais objPais = new Pais("","");
+        String codigo = txfCodigo.getText();
+        Pais objPais = new Pais(codigo,"");
         controlPais objControlPais = new controlPais(objPais);
         objPais = objControlPais.consultar();
         txfNombre.setText(objPais.getNombre());
         this.listar();
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        String codigo="0";
+        String nombre="nombre";
+        if(!txfCodigo.getText().isEmpty())codigo=txfCodigo.getText();
+        if(!txfNombre.getText().isEmpty())nombre=txfNombre.getText();
+        Pais objPais = new Pais(codigo,nombre);
+        controlPais objControlPail = new controlPais(objPais);
+        objControlPail.modificar();
+        this.listar();
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
