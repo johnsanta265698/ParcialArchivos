@@ -131,4 +131,23 @@ public class controlPais {
         return objPais;
     }
     
+    public String[][] listar(){//mejorar este algoritmo en caso de que el archivo sea grande ya que la matriz no resiste muchso datos
+        String[][] mat;
+        String linea;
+        String[] arrLinea;
+        Archivos objArchivos= new Archivos();
+        objArchivos.abrirArchivoParaLectura("Paises.txt");
+        long n=objArchivos.contarLineas();
+        mat = new String[(int)n][4];
+        objArchivos.cerrarArchivoParaLectura();
+        objArchivos.abrirArchivoParaLectura("Paises.txt");
+        for (long i=0;i<n;i++){
+            linea=objArchivos.leerUnaLineaTexto();
+            arrLinea=linea.split(",");
+            for(int j=0;j<4;j++) mat[(int)i][j]=arrLinea[j];
+       }
+       objArchivos.cerrarArchivoParaLectura();
+       return mat;
+    }
+    
 }
