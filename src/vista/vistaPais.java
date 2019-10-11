@@ -220,8 +220,8 @@ public class vistaPais extends javax.swing.JFrame {
         if(!txfCodigo.getText().isEmpty())codigo=txfCodigo.getText();
         if(!txfNombre.getText().isEmpty())nombre=txfNombre.getText();
         Pais objPais = new Pais(codigo,nombre);
-        controlPais objControlPail = new controlPais(objPais);
-        objControlPail.modificar();
+        controlPais objControlPais = new controlPais(objPais);
+        objControlPais.modificar();
         this.listar();
     }//GEN-LAST:event_btnModificarActionPerformed
 
