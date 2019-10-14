@@ -31,6 +31,7 @@ public class vistaCiudad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         lblCiudad = new javax.swing.JLabel();
         lblCodigo = new javax.swing.JLabel();
         txfCodigo = new javax.swing.JTextField();
@@ -46,6 +47,9 @@ public class vistaCiudad extends javax.swing.JFrame {
         btnModificar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblListar = new javax.swing.JTable();
+        btnRegresar = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +104,13 @@ public class vistaCiudad extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblListar);
 
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,7 +144,8 @@ public class vistaCiudad extends javax.swing.JFrame {
                                     .addComponent(txfNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
                                     .addComponent(txfCodigoPais, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txfCodigo)
-                                    .addComponent(txfRutaNombre, javax.swing.GroupLayout.Alignment.LEADING))))))
+                                    .addComponent(txfRutaNombre, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -165,7 +177,8 @@ public class vistaCiudad extends javax.swing.JFrame {
                     .addComponent(btnModificar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -249,6 +262,11 @@ public class vistaCiudad extends javax.swing.JFrame {
         objControlCiudad.guardar();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        this.setVisible(false);
+        new vistaPrincipal().setVisible(true);
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,6 +307,8 @@ public class vistaCiudad extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCiudad;
     private javax.swing.JLabel lblCodigo;

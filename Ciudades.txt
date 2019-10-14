@@ -1,1 +1,1 @@
-1,Medellin,01,Colombia
+01,Medellin,01,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/medellin.jpeg
