@@ -1,1 +1,2 @@
 01,Medellin,01,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/medellin.jpeg
+02,Paris,02,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/paris.jpg

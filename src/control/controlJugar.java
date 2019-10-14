@@ -24,7 +24,8 @@ public class controlJugar {
         objArchivos.cerrarArchivoParaLectura();
         objArchivos1.abrirArchivoParaLectura("Ciudades.txt");
         //generar aleatorio
-        int aleatorio = (int)(Math.random()*objArchivos.contarLineas()+1);
+        System.out.print(nLineas);
+        int aleatorio = (int)(Math.random()*nLineas+1);
         int i = 1;
         while (i<=nLineas) {
             String linea = objArchivos1.leerUnaLineaTexto();
