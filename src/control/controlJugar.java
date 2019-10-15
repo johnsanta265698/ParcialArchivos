@@ -77,19 +77,6 @@ public class controlJugar {
         }
         objArchivos.cerrarArchivoParaLectura();
         return objPais;
-        
-        /*String[] cadena=null;
-        Archivos objArchivos = new Archivos();
-        objArchivos.abrirArchivoParaLectura(ruta);
-        for (int i = 0; i < objArchivos.contarLineas(); i++) {
-            cadena = objArchivos.leerUnaLineaTexto().split(",");
-            if (linea.equals(cadena[1])) {
-                objArchivos.cerrarArchivoParaLectura();
-                return cadena;
-            }
-        }
-        objArchivos.cerrarArchivoParaLectura();
-        return cadena;*/
     }
     
 }

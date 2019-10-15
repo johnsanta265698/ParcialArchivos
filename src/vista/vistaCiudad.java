@@ -6,6 +6,10 @@
 package vista;
 
 import control.controlCiudad;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import modelo.Ciudad;
 
@@ -20,6 +24,7 @@ public class vistaCiudad extends javax.swing.JFrame {
      */
     public vistaCiudad() {
         initComponents();
+        this.setLocationRelativeTo(this);
     }
 
     /**
@@ -39,7 +44,6 @@ public class vistaCiudad extends javax.swing.JFrame {
         txfNombre = new javax.swing.JTextField();
         lblCodigoPais = new javax.swing.JLabel();
         txfCodigoPais = new javax.swing.JTextField();
-        lblRutaNombre = new javax.swing.JLabel();
         txfRutaNombre = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
@@ -48,20 +52,28 @@ public class vistaCiudad extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblListar = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
+        btnRutaNombre = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCiudad.setText("CIUDAD");
+        getContentPane().add(lblCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 12, -1, -1));
 
         lblCodigo.setText("Codigo:");
+        getContentPane().add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 54, -1, -1));
+        getContentPane().add(txfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 48, 189, -1));
 
         lblNombre.setText("Nombre:");
+        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 102, -1, -1));
+        getContentPane().add(txfNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 96, 189, -1));
 
         lblCodigoPais.setText("Coigo país:");
-
-        lblRutaNombre.setText("Ruta y Nombre:");
+        getContentPane().add(lblCodigoPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 150, -1, -1));
+        getContentPane().add(txfCodigoPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 144, 189, -1));
+        getContentPane().add(txfRutaNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 193, 189, -1));
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,6 +81,7 @@ public class vistaCiudad extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 242, -1, -1));
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +89,7 @@ public class vistaCiudad extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 242, -1, -1));
 
         btnBorrar.setText("Borrar");
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +97,7 @@ public class vistaCiudad extends javax.swing.JFrame {
                 btnBorrarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 242, -1, -1));
 
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +105,7 @@ public class vistaCiudad extends javax.swing.JFrame {
                 btnModificarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 242, -1, -1));
 
         tblListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,82 +120,23 @@ public class vistaCiudad extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblListar);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 280, 306, 102));
+
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 394, 308, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(lblCiudad))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btnGuardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscar)
-                        .addGap(12, 12, 12)
-                        .addComponent(btnBorrar)
-                        .addGap(12, 12, 12)
-                        .addComponent(btnModificar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblRutaNombre)
-                                    .addComponent(lblCodigoPais)
-                                    .addComponent(lblNombre)
-                                    .addComponent(lblCodigo))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txfNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                                    .addComponent(txfCodigoPais, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txfCodigo)
-                                    .addComponent(txfRutaNombre, javax.swing.GroupLayout.Alignment.LEADING)))
-                            .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblCiudad)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigo)
-                    .addComponent(txfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
-                    .addComponent(txfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigoPais)
-                    .addComponent(txfCodigoPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRutaNombre)
-                    .addComponent(txfRutaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnBuscar)
-                    .addComponent(btnBorrar)
-                    .addComponent(btnModificar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        btnRutaNombre.setText("Cargar ruta");
+        btnRutaNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRutaNombreActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRutaNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 192, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -267,6 +224,16 @@ public class vistaCiudad extends javax.swing.JFrame {
         new vistaPrincipal().setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void btnRutaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRutaNombreActionPerformed
+        JFileChooser fc = new JFileChooser();//DECLARAR EL FILE CHOOSER
+        fc.setDialogTitle("BUSCAR FOTO O IMAGEN");//TITULO PARA LA VENTANA QUE SE ABRIRA
+        
+        if(fc.showOpenDialog(this)==JFileChooser.APPROVE_OPTION){//SI PRESIONA ACEPTAR ENTRE EN LA CONDICION
+            File Archivo = new File(fc.getSelectedFile().toString());
+            txfRutaNombre.setText(Archivo.toString());
+        }
+    }//GEN-LAST:event_btnRutaNombreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -308,13 +275,13 @@ public class vistaCiudad extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRutaNombre;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCiudad;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblCodigoPais;
     private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblRutaNombre;
     private javax.swing.JTable tblListar;
     private javax.swing.JTextField txfCodigo;
     private javax.swing.JTextField txfCodigoPais;
