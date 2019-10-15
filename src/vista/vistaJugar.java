@@ -2,6 +2,7 @@ package vista;
 
 import control.*;
 import java.awt.Image;
+import java.io.File;
 import javax.swing.ImageIcon;
 import modelo.*;
 /**
@@ -99,7 +100,8 @@ public class vistaJugar extends javax.swing.JFrame {
         if (contador<3) {
             respuesta = objControlJugar.validarPais(objCiudad, txfPais.getText());
             if (respuesta) {
-                Image img= new ImageIcon(objCiudad.getRutaNombre()).getImage();
+                String ruta = new File (objCiudad.getRutaNombre()).getAbsolutePath();
+                Image img= new ImageIcon(ruta).getImage();
                 ImageIcon img2=new ImageIcon(img.getScaledInstance(223, 124, Image.SCALE_SMOOTH));
                 lblImagen.setIcon(img2);
                 lblRespuesta.setText("Ganaste!");

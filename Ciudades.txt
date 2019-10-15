@@ -1,10 +1,10 @@
-01,Berlin,01,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/berlin.jpg
-02,Denver,02,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/denver.jpg
-03,Medellin,03,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/medellin.jpeg
-04,Moscu,04,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/moscu.jpg
-05,Nairobi,05,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/Nairobi.jpg
-06,Paris,06,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/paris.jpg
-07,Rio  De Janeiro,07,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/Rio-de-Janeiro-II.jpg
-08,Roma,08,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/roma.jpeg
-09,San Francisco,09,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/san-francisco.jpg
-10,Tokio,10,/home/john/Documentos/ParcialArchivosPlanos/ParcialArchivos/imagenes/tokyo.jpg
+01,Berlin,01,imagenes/berlin.jpg
+02,Denver,02,imagenes/denver.jpg
+03,Medellin,03,imagenes/medellin.jpeg
+04,Moscu,04,imagenes/moscu.jpg
+05,Nairobi,05,imagenes/Nairobi.jpg
+06,Paris,06,imagenes/paris.jpg
+07,Rio  De Janeiro,07,imagenes/Rio-de-Janeiro-II.jpg
+08,Roma,08,imagenes/roma.jpeg
+09,San Francisco,09,imagenes/san-francisco.jpg
+10,Tokio,10,imagenes/tokyo.jpg

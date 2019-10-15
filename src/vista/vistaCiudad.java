@@ -231,6 +231,10 @@ public class vistaCiudad extends javax.swing.JFrame {
         if(fc.showOpenDialog(this)==JFileChooser.APPROVE_OPTION){//SI PRESIONA ACEPTAR ENTRE EN LA CONDICION
             File Archivo = new File(fc.getSelectedFile().toString());
             txfRutaNombre.setText(Archivo.toString());
+            String rutaRelativa = txfRutaNombre.getText();
+            String[] ruta = rutaRelativa.split("/");
+            rutaRelativa = ruta[ruta.length-2]+"/"+ruta[ruta.length-1];
+            txfRutaNombre.setText(rutaRelativa);
         }
     }//GEN-LAST:event_btnRutaNombreActionPerformed
 
