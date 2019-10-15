@@ -1,6 +1,7 @@
 package control;
 import java.util.Random;
 import java.awt.Image;
+import java.text.Normalizer;
 import javax.swing.ImageIcon;
 import modelo.Ciudad;
 import modelo.Pais;
@@ -59,6 +60,8 @@ public class controlJugar {
     
     public Pais buscarLinea(String ruta, String pais){
         Pais objPais = null;
+        pais = cleanString(pais);
+        pais = pais.toUpperCase();
         Archivos objArchivos = new Archivos();
         objArchivos.abrirArchivoParaLectura("Paises.txt");
         long nLineas = objArchivos.contarLineas();
@@ -69,7 +72,8 @@ public class controlJugar {
         while (i<=nLineas) {
             String linea = objArchivos.leerUnaLineaTexto();
             String[] arrLinea = linea.split(",");
-            if (pais.equals(arrLinea[1])) {
+            arrLinea[1] = cleanString(arrLinea[1]);
+            if (pais.equals(arrLinea[1].toUpperCase())) {
                 objPais = new Pais(arrLinea[0], arrLinea[1]);
                 i = (int)nLineas+1;
             }
@@ -78,5 +82,11 @@ public class controlJugar {
         objArchivos.cerrarArchivoParaLectura();
         return objPais;
     }
+    
+        public static String cleanString(String texto) {//QUITA CARACTERES ESPECIALES DE CUALQUIER TEXTO
+        texto = Normalizer.normalize(texto, Normalizer.Form.NFD);
+        texto = texto.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        return texto;
+    }   
     
 }
