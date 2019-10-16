@@ -108,6 +108,7 @@ public class vistaJugar extends javax.swing.JFrame {
             } else {
                txfPais.setText("");
                lblRespuesta.setText("Intenta de nuevo");
+               contador+=1;
             }
         }else{
             Image img= new ImageIcon(objCiudad.getRutaNombre()).getImage();
